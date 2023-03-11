@@ -1,0 +1,49 @@
+% !TeX program = lualatex
+
+\documentclass{article}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\setlength{\parindent}{0em} %indents to paragraphs
+\setlength{\parskip}{1em} %lineskips after paragraph breaks
+\usepackage[margin=1.0in]{geometry} %margins
+\usepackage{bbm}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{tikz-feynman}
+\usepackage{amsmath}
+\usepackage{physics}
+\usetikzlibrary{calc}
+\usepackage{feynmp}
+\usepackage{feynmp-auto}
+\usepackage{breqn}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\newcommand{\vectorproj}[2][]{\textit{proj}_{{#1}}{#2}}
+\newcommand{\vect}{\mathbf}
+
+\newenvironment{amatrix}[1]{%
+	\left(\begin{array}{@{}*{#1}{c}|c@{}}
+	}{%
+	\end{array}\right)
+}
+\makeatletter
+\let\@@span\span
+\def\sp@n{\@@span\omit\advance\@multicnt\m@ne}
+\makeatother
+
+\renewcommand{\span}{...}
+\newcommand{\galaxy}{\includegraphics[width=0.13in]{image}}
+
+
+\title{PHY152: Group Report 2}
+\author{A. Lehmann}
+\date{March 12th 2023}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+\end{document}
