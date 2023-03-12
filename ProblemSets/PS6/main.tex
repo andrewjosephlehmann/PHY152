@@ -196,43 +196,27 @@ $
 
 
 
-%	\begin{tikzpicture}[black!75,thick]
-		
-	%			\filldraw[blue] (13,0) circle (4pt);
-	%	% Supporting structure
-%		\fill [pattern = north west lines] (3,-1.5) rectangle ++(-.2,3);
-%		\draw[thick] (3,-1.5) -- ++(0,3);
-		
-%		\draw
-%		[
-%		decoration={
-%			coil,
-%			segment length = 1mm,
-%			amplitude = 2mm,
-%			aspect = 0.5,
-%			post length = 3mm,
-%			pre length = 3mm},
-%		decorate] (3,0) -- ++(10,0);
 		
 
-%	\end{tikzpicture}
 
 
 
 
 
+
+
+\subsubsection{Unknown constants $M,$ $N$ and $T$}
 \begin{center}
 	\centering
 	\includegraphics[width=0.5\linewidth]{../../../../../../../../../Downloads/MHM_xt}
 	\label{fig:mhmxt}
 \end{center}
-\subsubsection{Unknown constants $M,$ $N$ and $T$}
 \textit{The graph is described by following equation:}
 \begin{center}
 	$x(t) = Acos(\omega t + \theta_0)
 	$
 \end{center}
-\textbar{By observing the graph, we may determine that the contant $M$ is equivalent to the amplitude of the function. The amplitude is the value which dictates the maximum value of $x(t)$.
+\textbar{By observing the graph, we may determine that the contant $M$ is equivalent to the amplitude of the function. The amplitude is the value which dictates the maximum value of $x(t)$. Thus, $M = A$. 
 	
 To uncover angular velocity $\omega$:}
 
@@ -248,23 +232,133 @@ $
 \end{center}
 \textit{Solve, for $\omega$:}
 \begin{center}
-	$ \omega = \frac{2\pi}{T}
+	$ \boxed{\omega = \frac{2\pi}{T}}
 	$
 \end{center}
 \textbar{To uncover $\theta_0$:}
 \begin{center}
-	$ \omega = \frac{2\pi}{T} 
+	$ \omega = \frac{2\pi}{T} \rightarrow
 $
-
-	$ \frac{\theta_0}{t} = \frac{2\pi}{T}
+	$ \frac{\theta_0}{t} = \frac{2\pi}{T} \rightarrow
 	$
-
 	$\theta_0 = \frac{2\pi(t)}{T}
 	$
 	
-	$\theta_0 = \frac{2\pi(N)}{T}
+	$\boxed{\theta_0 = \frac{2\pi(N)}{T}}
 	$
 \end{center}
+\subsection{Derivation of Energy in SHM }
+
+
+	\begin{tikzpicture}[black!75,thick]
+	
+				\filldraw[blue] (13,0) circle (4pt);
+		% Supporting structure
+			\fill [pattern = north west lines] (3,-1.5) rectangle ++(-.2,3);
+			\draw[thick] (3,-1.5) -- ++(0,3);
+	
+			\draw
+			[
+			decoration={
+					coil,
+					segment length = 1mm,
+					amplitude = 2mm,
+					aspect = 0.5,
+					post length = 3mm,
+					pre length = 3mm},
+			decorate] (3,0) -- ++(10,0);
+	\end{tikzpicture}
+
+\textbar{In this scenario, the system's energy may be described as kinetic energy along with the spring's potential energy: }
+\begin{center}
+$ E = KE + U_s = \frac{1}{2}mv^2 + \frac{1}{2}k\Delta x^2
+$
+\end{center}
+\textbar{Previously, we found functions which describe the position and velocity of a simple harmonic oscillator. Thus, let us insert these derivations into our equation for the energy of SHM:}
+\begin{center}
+	$ E = \frac{1}{2}m\left[-A\omega\sin(\omega t + \theta_0)\right]^2 + \frac{1}{2}k\left[A\cos(\omega t + \theta_0)\right]^2
+	$
+	
+	$ E = \frac{1}{2}mA^2\omega^2\sin^2(\omega t + \theta_0) + \frac{1}{2}kA^2\cos^2(\omega t + \theta_0)
+	$
+	
+	
+	\textit{Since the relation of angular velocity, spring constant, and mass is: $\omega = \sqrt{\frac{k}{m}} $ Then: }
+	
+	$ E = \frac{1}{2}kA^2\left[\sin^2(\omega t + \theta_0) + \cos^2(\omega t + \theta_0)\right]
+	$
+	
+	
+	\textit{
+		Using the trig identity, $\sin^2(\theta) + \cos^2(\theta) = 1$  \\ We can assess that the expression $\sin^2(\omega t + \theta_0) + \cos^2(\omega t + \theta_0) = 1$ Thus: }
+	
+	$\boxed{E = \frac{1}{2}kA^2}
+	$
+\end{center}
+
+\subsubsection{The energy of a particle in SHM once $KE = 2U_s$}
+\textbar{Consider the motion of a particle given by $x(t) = (25cm)\cos(25t) $, where $t$ is in seconds $(s)$. What is the first time the kinetic energy is twice the potential energy?
+
+We observe that the amplitude $(A)$ is 25cm, and the angular velocity $(\omega)$ has a value of 25. Therefore, to receive written kinetic energy, let us take the derivative of position with respect to time:  }
+\begin{center}
+$ v(t) = \frac{dx}{dt} = -A\sin(\omega t + \theta_0) = -25cm(25)\sin(25t)
+$
+\end{center}
+\textbar{Now set $KE = 2U_s$ and solve for $t$: }
+
+\begin{center}
+	$ KE = 2U_s
+	$
+	
+	$\frac{1}{2}mv^2=2\frac{1}{2}(\omega^2m)x^2
+	$
+	
+	$mv^2 = (\omega^2m)x^2
+	$
+	
+	$m\left[v(t)\right]^2 = 2(\omega^2m)\left[x(t)\right]^2
+	$
+	
+	$\left[-A\omega\sin(\omega t + \theta_0)\right]^2 = 2(\omega^2)\left[A\cos(\omega t + \theta_0)\right]^2
+	$
+	
+	$\left[-25cm(25)\sin(25t)\right]^2 = 2(25^2)\left[(25cm)\cos(25t)\right]^2
+	$
+	
+	$\left[-625\sin(25t)\right]^2 = 1250\left[(25cm)\cos(25t)\right]^2
+    $
+    
+    $(390 625)\sin^2(25t) = 1250(625)\cos^2(25t)
+    $
+    
+    $\sin^2(25t) = 2\cos^2(25t)
+    $
+    
+    
+ 	\textit{Using trig identity $\sin^2(\theta) + \cos^2(\theta) = 1$, we may express $sin^2(\theta) = 1 - \cos^2(\theta)$. Thus:}
+ 	
+ 	$ 1 - \cos^2(25t) = 2\cos^2(25t)
+ 	$
+ 	
+ 	$ 1 = 3\cos^2(25t) 
+ 	$
+ 	
+ 	$ \frac{1}{3} = \cos^2(25t)
+ 	$
+ 	
+ 	$ \arccos\left(\frac{1}{\sqrt{3}}\right) = 25t
+ 	$
+ 	
+ 	$\boxed{t = \arccos\left(\frac{1}{\sqrt{3}}\right)\left(\frac{1}{25}\right) = 0.038s}
+ 	$
+\end{center} 
+
+
+
+
+
+
+
 \section{PART B} 
 
 
