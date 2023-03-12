@@ -22,8 +22,15 @@
 \usepackage{breqn}
 \usepackage{graphicx}
 \usepackage{mathtools}
+\usetikzlibrary{decorations.pathmorphing,patterns}
 \newcommand{\vectorproj}[2][]{\textit{proj}_{{#1}}{#2}}
 \newcommand{\vect}{\mathbf}
+\usepackage{pgfplots}
+\usetikzlibrary{intersections,angles,quotes}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{decorations.pathmorphing,patterns}
+\tikzstyle{spring}=[thick,decorate,decoration={zigzag,pre length=0.1cm,post
+	length=0.1cm,segment length=6}]
 
 \newenvironment{amatrix}[1]{%
 	\left(\begin{array}{@{}*{#1}{c}|c@{}}
@@ -39,11 +46,127 @@
 \newcommand{\galaxy}{\includegraphics[width=0.13in]{image}}
 
 
-\title{PHY152: Group Report 2}
+\title{PHY152: Problem Set 6}
 \author{A. Lehmann}
 \date{March 12th 2023}
 
 \begin{document}
 	\maketitle
 	\tableofcontents
-\end{document}
+\newpage
+\begin{center}
+	$ x(t)=Acos\left(\frac{2\pi t}{T}\right)\leftrightarrow x(t)=Acos\left(2\pi ft\right)
+	$
+\end{center}
+
+\section{PART A}
+\subsection{Cosine Wave}
+\textbar{The graph provided by \textit{Mastering Physics} for PS6A illustrates the position of an object as a function of time. Let us derive the equation for the oscillation of this graph. 
+	
+	\begin{center}
+		\centering
+		\includegraphics[width=0.5\linewidth]{../../../../../../../../../Downloads/MHM_xt}
+		\label{fig:mhmxt}
+	\end{center}
+
+\subsubsection{Derivation of SHM}
+Simple harmonic motion is a periodic motion in which the object moves back and forth along a straight line. It's deviation from equilibrium  is proportional to the force acting on it. }
+\begin{center}
+	\textit{Spring force formula:}
+	$ F = k(x-x_{0}) = -kx$
+\end{center}
+\textbar{Now apply Newtons second law:}
+\begin{center}
+	$ m\vec{a} = -kx
+	$
+\end{center}
+\textbar{Acceleration is the derivative of velocity with respect to time, and velocity is the derivative of position with respect to time. Thus, we may rewrite acceleration as:}
+
+\begin{center}
+	$a= \frac{dv}{dt} = \frac{d^{2}x}{dt^2}		
+	$
+\end{center}
+\textbar{Since equating Newton's second law with spring force is a differential equation, we shall rearrange it in terms of its derivatives:}
+\begin{center}
+	$ m\left(\frac{d^{2}x}{dt^2}\right) = -kx \leftrightarrow m\left(\frac{d^{2}x}{dt^2}\right) + kx = 0
+	$
+\end{center}
+
+\textbar{To describe simple harmonic motion, I will establish equivalence between to the x-coordinates of a particle moving in uniform circular motion.}
+
+\textit{$P$ = Position of Arbitrary Point-Particle \\
+	$A$ = Amplitude \\
+	$\theta$ = Angle with respect from x-axis to P}
+\begin{center}
+\begin{tikzpicture}
+	\tikzset{>=stealth}
+	% draw axis and labels. We store a single coordinate to have the
+	% direction of the x axis
+	\draw[->] (-4,0) -- ++(8,0) coordinate (X) node[below] {$x$};
+	\draw[->] (0,-4) -- ++(0,8) node[left] {$y$};
+	
+	\newcommand\CircleRadius{3cm}
+	\draw (0,0) circle (\CircleRadius);
+	% special method of noting the position of a point
+	\coordinate (P) at (45:\CircleRadius);
+	
+	\draw[very thick] 
+	(0,0) 
+	coordinate (O) % store origin
+	node[below right] {} % label
+	-- 
+	node[above right,pos=1] {$P$} % some labels
+	node[above left,midway] {$A$}
+	(P) 
+	-- 
+	node[midway,right] {$A\sin\theta$}
+	(P |- O) coordinate (Px) % projection onto horizontal line through
+	% O, saved for later
+	-- 
+	node[midway,below] {$A\cos\theta$}
+	cycle % closed path
+	% pic trick is from the angles library, requires the three points of
+	% the marked angle to be named
+	pic [draw,blue,angle radius=1cm,pic text=$\theta$,
+	angle eccentricity=1.3] {angle=X--O--P};
+	
+	% right angle marker
+	\draw ($(Px)-(0.3,0)$) -- ++(0,0.3) -- ++(0.3,0);
+	%Point Particle drawing
+	\filldraw[blue] (2.12,2.12) circle (4pt);
+	
+\end{tikzpicture}
+\end{center}
+
+\textbar{Therefore, we may write the position over time as:}
+\begin{center}
+$ x(t)=A\cos(\omega t) \implies x(t) = A\cos(\omega t + \theta_{0})
+$
+\end{center}	
+\textbar{Differentiating this equation twice, we find:}
+
+\begin{center}
+$ \frac{dx}{dt} = -A\omega \sin(\omega t)
+$
+\end{center}
+\begin{center}
+	$\frac{d^{2}x}{dt^2} = - A\omega^2\cos(\omega t)
+	$
+\end{center}
+
+\textbar{Inserting the equation for acceleration and position about the x-axis into our differential equation yields:}
+
+\begin{center}
+$m(- A\omega^2\cos(\omega t)) + k(A\cos(\omega t)) = 0 
+$
+\end{center}
+
+\begin{center}
+	$- A\omega^2\cos(\omega t) + \frac{k}{m}(A\cos(\omega t)) = 0 
+	$
+\end{center}
+\textbar{For when $\omega = \sqrt{\frac{k}{m}}$ then:}
+\begin{center}
+$ x = A\cos\left(t\sqrt{\frac{k}{m}}\right) \implies x = A\cos\theta
+$
+\end{center}
