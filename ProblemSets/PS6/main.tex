@@ -22,6 +22,7 @@
 \usepackage{breqn}
 \usepackage{graphicx}
 \usepackage{mathtools}
+\usepackage{tabularx}
 \usetikzlibrary{decorations.pathmorphing,patterns}
 \newcommand{\vectorproj}[2][]{\textit{proj}_{{#1}}{#2}}
 \newcommand{\vect}{\mathbf}
@@ -437,12 +438,110 @@ $
 $v^2 = \frac{kA^2 - kx_1^2}{m}
 $
 
-$\boxed{v = \sqrt{\frac{k\left(A^2 - x_1^2\right)}{m}} =  \sqrt{\frac{(2.0N/m)\left((83.5\times10^{-3}m)^2 - (35.0\times10^{-3}m)^2\right)}{13.0\times10^{-2}kg}} = 29.7\times10^{-3}m/s}
+$\boxed{v = \sqrt{\frac{k\left(A^2 - x_1^2\right)}{m}} =  \sqrt{\frac{(2.0N/m)\left((83.5\times10^{-3}m)^2 - (35.0\times10^{-3}m)^2\right)}{13.0\times10^{-2}kg}} = 29.7\times10^{-2}m/s}
 $
 
 \end{center}
 
+\subsection{Modelling The Potential Energy of The Molecular Bonds of HCl with SHM}
+\textbar{In molecular bonds, the electromagnetic force holds two atoms in close proximity. This force can be approximated as a spring-like force that varies with the distance between the atoms. When atoms are near or far apart, they have greater force and little to no force around a neutral point (equilibrium bond length).}
+
+\begin{center}
+	
+	\includegraphics[width=0.5\linewidth]{../../../../../../../../../Downloads/14.P65}
+
+	\label{fig:14}
+\end{center}
+\textbar{The resulting energy potential curve for the bond may be approximated as a parabolic curve, with its minimum being the equilibrium bond length. Let us use this curve to model the vibrational motion of the molecular bond of HCl. The hydrogen atom ($m=1.67\times10^{-27}kg$) is less massive than the chlorine atom for a diatomic molecule like HCl. Thus it is convincing to assume that the hydrogen atom vibrates back and forth while the chlorine atom stays at rest.}
+\subsubsection{Deriving Frequency of an Oscillation in SHM}
+\textbar{From 1.1.2, we derived the relation between angular velocity, and period of a harmonic system.}
+\begin{center}
+$\omega = \frac{2\pi}{T}
+$
+
+	\textit{Since the relation of angular velocity, spring constant, and mass is: $\omega = \sqrt{\frac{k}{m}} $ Then: }
+	
+$\sqrt{\frac{k}{m}} = \frac{2\pi}{T}
+$
+\end{center}
+\textbar{Rearrange in terms of the period:}
+\begin{center}
+$T\sqrt{\frac{k}{m}} = 2\pi
+$
+
+$T = 2\pi\left(\frac{1}{\sqrt{\frac{k}{m}}}\right)
+$
+
+\textit{Since the S.I. unit for period ($T$) is $s^1$, and for frequency ($f$), it is $s^{-1}$, we express: $T = \frac{1}{f}$. Thus:} 
+	
+$\boxed{f = \frac{1}{2\pi}\sqrt{\frac{k}{m}}}
+$
+\end{center}
+
+\subsubsection{Modelling The Data}
+\textbar{By observing the graph, we may observe that the equilibrium length of bond $x_0$ is $13\times10^{-5}m$. With this knowledge, we may approximate the spring constant and find the vibrational frequency of the diatomic molecule HCl. The function the graph illustrates is:}
+
+\begin{center}
+$E = U_s
+$
+
+$E = \frac{1}{2}k\Delta x^2
+$
+
+$E = \frac{1}{2}k(x-x_0)^2 
+$
+
+\end{center}
+\textbar{Rerrange for spring constant:}
+\begin{center}
+$2E = k(x-x_0)^2 
+$
+
+$\frac{2E}{(x-x_0)^2} = k 
+$
+\end{center}
+\textbar{Let us choose five regions of the function and take the average to find the $k$ constant.}
+
+\begin{center}
+\begin{tabularx}{0.8\textwidth} { 
+		| >{\raggedright\arraybackslash}X 
+		| >{\centering\arraybackslash}X 
+		| >{\raggedleft\arraybackslash}X | }
+	\hline
+	$E=1.85\times10^{-19}J$ & $x=0.1$ & item 13 \\
+	\hline
+	item 21  & item 22  & item 23  \\
+	\hline
+	item 11 & item 12 & item 13 \\
+	\hline
+	item 21  & item 22  & item 23  \\
+	\hline
+	item 21  & item 22  & item 23  \\
+	\hline
+\end{tabularx}
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{PART B} 
-
-
 \end{document}
