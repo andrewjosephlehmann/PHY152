@@ -479,7 +479,7 @@ $
 \end{center}
 
 \subsubsection{Modelling The Data}
-\textbar{By observing the graph, we may observe that the equilibrium length of bond $x_0$ is $13\times10^{-5}m$. With this knowledge, we may approximate the spring constant and find the vibrational frequency of the diatomic molecule HCl. The function the graph illustrates is:}
+\textbar{By observing the graph, we may observe that the equilibrium length of bond $x_0$ is $1.3\times10^{-10}m$. With this knowledge, we may approximate the spring constant and find the vibrational frequency of the diatomic molecule HCl. The function the graph illustrates is:}
 
 \begin{center}
 $E = U_s
@@ -503,26 +503,36 @@ $
 \textbar{Let us choose five regions of the function and take the average to find the $k$ constant.}
 
 \begin{center}
-\begin{tabularx}{0.8\textwidth} { 
+\begin{tabularx}{1\textwidth} { 
 		| >{\raggedright\arraybackslash}X 
 		| >{\centering\arraybackslash}X 
 		| >{\raggedleft\arraybackslash}X | }
 	\hline
-	$E=1.85\times10^{-19}J$ & $x=0.1$ & item 13 \\
+	$E=2.0\times10^{-19}J$ & $x=1.0\times10^{-10}m$ & $k = \frac{2(2.0\times10^{-19}J)}{(1.0\times10^{-10}m - 1.3\times10^{-10}m)^2}=4.5\times10^{2}N/m $ \\
 	\hline
-	item 21  & item 22  & item 23  \\
+	$E = 4.0\times10^{-19}J$  & $x = 8.5\times10^{-11}m $  & $k = \frac{2(4.0\times10^{-19}J)}{(8.5\times10^{-11}m - 1.3\times10^{-10}m)^2}=4.0\times10^{2}N/m $\\
 	\hline
-	item 11 & item 12 & item 13 \\
+	$E = 5.0\times10^{-20}J$ & $x = 1.5\times10^{-10}m$ & $k = \frac{2(5.0\times10^{-20}J)}{(1.5\times10^{-10}m - 1.3\times10^{-10}m)^2}=2.5\times10^{2}N/m $ \\
 	\hline
-	item 21  & item 22  & item 23  \\
+	$E = 1.5\times10^{-19}J$ & $x=1.6\times10^{-10}m$  & $k = \frac{2(1.5\times10^{-19}J)}{(1.6\times10^{-10}m - 1.3\times10^{-10}m)^2}=3.3\times10^{2}N/m $  \\
 	\hline
-	item 21  & item 22  & item 23  \\
+	$E = 4.0\times10^{-19}J$  & $x = 1.8\times10^{-10}m$  & $k = \frac{2(4.0\times10^{-19}J)}{(1.8\times10^{-10}m - 1.3\times10^{-10}m)^2}=3.2\times10^{2}N/m $  \\
 	\hline
 \end{tabularx}
 \end{center}
+\textbar{Now let us take the average of the values returned for spring constant:}
+\begin{center}
+	$k_{avg} = \sum_{i}^{n} \frac{k_i + ... +k_n}{n} = \frac{(4.5\times10^2N/m) + (4.0\times10^2N/m) + (2.5\times10^2N/m) + (3.3\times10^2N/m) + (3.2\times10^2N/m)}{5} = 3.5\times10^2N/m
+	$
+\end{center}
+\textbar{Now that we know (approximately) what the average of the spring constant is, we can solve for the frequency:}
+\begin{center}
+$\boxed{f = \frac{1}{2\pi}\sqrt{\frac{k_{avg}}{m_H}} = \frac{1}{2\pi}\sqrt{\frac{3.5\times10^2N/m}{1.67\times10^{-27}kg}} = 7.29\times10^{13}Hz}
+$
+\end{center}
+\textit{The vibration frequency is simply an approximation, and with more precise data, would likely yield a different answer for the vibrational frequency of HCl.}
 
-
-
+\subsection{Deriving The Motion of a Pendulum}
 
 
 
