@@ -397,14 +397,51 @@ $
 	$\boxed{a = A\omega^2 = A\left(\sqrt{\frac{k}{m}}\right)^2 = (83.5\times10^{-3}m)\left(\sqrt{\frac{2.0N/m}{13.0\times10^{-2}kg}}\right)^2 = 1.3 m/s^2}
 	$
 \end{center}
-\textbar{Now let us take the second derivative to find the formula for the acceleration of the block. }
+\textbar{Now let us take the second derivative to find the formula for the acceleration of the block, in relation to position. }
 \begin{center}
 $x(t) = A\cos(\omega t + \theta_0)
 $
 
-$a(t) = \frac{d^2x}{dt^2} = -A\omega^2\cos(\omega t + \theta_0)
+$a(t) = \frac{d^2x}{dt^2} = -A\omega^2\cos(\omega t + \theta_0) = -\omega^2 x(t)
 $
 \end{center}
+\textbar{Rearrange for the position at which the acceleration is the maximum:}
+\begin{center}
+$ a(t) = -\omega^2 x(t)
+$
+
+$\frac{a(t)}{-\omega^2} = x(t)
+$
+
+$\frac{a(t)}{-\left(\sqrt{\frac{k}{m}}\right)^2} = x(t)$
+
+$\boxed{x(t) = \frac{1.3m/s^2}{-\left(\sqrt{\frac{2.0N/m}{13.0\times10^{-2}}}\right)^2} = -84.5\times10^{-3}m}$
+
+\end{center}
+
+\textbar{We also must find the velocity of the block once it reaches $x_1 = 35.0\times10^{-3}m$. For this, we can use a derivation of the energy conservation of SHM and solve for the velocity:}
+
+\begin{center}
+$ E = KE + U_s
+$
+
+$\frac{1}{2}kA^2 = \frac{1}{2}mv^2 + \frac{1}{2}kx_1^2
+$
+
+$kA^2 = mv^2 + kx_1^2
+$
+
+$kA^2 - kx_1^2 = mv^2
+$
+
+$v^2 = \frac{kA^2 - kx_1^2}{m}
+$
+
+$\boxed{v = \sqrt{\frac{k\left(A^2 - x_1^2\right)}{m}} =  \sqrt{\frac{(2.0N/m)\left((83.5\times10^{-3}m)^2 - (35.0\times10^{-3}m)^2\right)}{13.0\times10^{-2}kg}} = 29.7\times10^{-3}m/s}
+$
+
+\end{center}
+
 \section{PART B} 
 
 
