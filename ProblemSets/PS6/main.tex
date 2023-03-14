@@ -671,8 +671,61 @@ $
 \begin{center}
 $ \frac{d^2\theta}{dt^2} = -\left(\frac{g}{L}\right)\theta
 $
-\textit{The relation of position to angular velocity is: $\frac{d^2x}{dt^2} = -\omega^2\left[x(t)\right]$
+
+\textit{The relation of acceleration to angular velocity is: $\frac{d^2x}{dt^2} = -\omega^2\left[x(t)\right]$. \\Let us insert this relation into our derivation:}
+
+$\frac{d^2\theta}{dt^2} = -\omega^2\theta
+$
+
+\textit{This relation implies that:}
+
+$\omega^2 = \frac{g}{L}
+$
+
+$\boxed{\omega = \sqrt{\frac{g}{L}}}
+$
 \end{center}
+\textbar{From section 1.1.2. we encountered the relation between angular velocity and the period of a harmonic system to be: $\omega = \frac{2\pi}{T}$. Now let us use this relation to find the period ($T$) of an idealized standard pendulum:}
+
+\begin{center}
+$\boxed{T=\frac{2\pi}{\omega} = \frac{2\pi}{\sqrt{\frac{g}{L}}} = 2\pi\sqrt{\frac{L}{g}}}
+$
+\end{center}
+\textbar{We can extend this fact to the notion of position, velocity, and acceleration, utilizing our previous equations for the linear motion of a simple harmonic oscillator:}
+
+\begin{center}
+$x(t) = A\cos(\omega(t) + \phi)
+$
+
+$\theta(t) = \theta_{max}\cos(\omega(t) + \phi)
+$
+
+$\omega(t) = \frac{d\theta}{dt} = -\theta_{max}\cos(\omega(t) + \phi)
+$
+
+$\alpha(t) = \frac{d^2\theta}{dt^2} = -\theta_{max}\omega^2(\omega(t) + \phi)
+$
+\end{center}
+\subsubsection{A Standard Pendulum Problem}
+
+\textbar{A pendulum is made by tying a $7.5\times10^{-2}kg$  ball to a $1.3m$-long string. The ball is pulled $0.08726rad$ to the side and released. How many times does the ball pass through the lowest point of its arc in 7.5 s?
+
+Previously we found the period $T$ of an idealized standard pendulum to be: $T=2\pi\sqrt{\frac{L}{g}}$}
+
+\begin{center}
+$T = 2\pi\sqrt{\frac{L}{g}} = 2\pi\sqrt{\frac{L}{g}} = 2\pi\sqrt{\frac{1.3m}{9.8m/s^2}} = 2.29 s
+$
+
+$f = \frac{1}{T} = 4.4\times10^{-1}Hz
+$
+
+\textit{Number of oscillations:}\hspace*{0.5cm}$\boxed{n = f(t) = (4.4\times10^{-1}Hz)(7.5s) = 6.55}
+$
+\end{center}
+
+
+
+
 
 
 
