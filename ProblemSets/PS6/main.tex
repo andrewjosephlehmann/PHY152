@@ -601,17 +601,78 @@ Let us make a couple illustrations that outlines much of the forces acting upon 
 \end{tikzpicture}
 \end{center}
 
-\textbar{One can observe that once the angle $\theta$ is greater or less than $0$ radians, the force of gravity gets divided into multiple components. One of these components $\vec{F}_g\sin\theta$ is a restoring force, meaning that it is the force which will always point towards the equilibrium. Now with some understanding of the workings of pendulums, let us delve into deriving the mathematics needed to solve these systems. }
+\textbar{One can observe that once the angle $\theta$ is greater or less than $0$ radians, the force of gravity gets divided into multiple components. One of these components $\vec{F}_g\sin\theta$ is a restoring force, meaning that it is the force which will always point towards the equilibrium. Now with some understanding of the workings of pendulums, let us delve into deriving the mathematics needed to solve these systems. First, let us write strings of equations that describe the force tangential to the gravitational force, such as the restoring force described above: }
+
+\begin{center}
+	$\sin\theta = \frac{O}{H} = \frac{F_{gt}}{F_g} 
+	$
+	
+	$F_g\sin\theta = F_{gt} 
+	$
+	
+	$F_{gt} = mg\sin\theta
+	$
+\end{center}
+
+\textbar{Now, let us take the summation the tangential forces to find the pendulum's acceleration:}
+
+\begin{center}
+	$\sum F_t = F_{gt}
+	$
+	
+	$-ma_t = mg\sin\theta
+	$
+	
+	$a_t = -g\sin\theta
+	$
+\end{center}
+\textbar{This equation describes linear motion; therefore, we need to convert this expression that involves angular motion. To do this, an expression for the arclength of a circle.}
+\begin{center}
+\begin{tikzpicture}
+		\draw (0,0) circle (1.7cm);
+		\draw[-] (0,0) -- +(60:1.7cm) ;
+		\draw[-] (0,0) -- +(30:1.7cm) ;
+		\draw[-] (0,0) -- node[pos=0.95,left=3pt ] {} +(60:1.7cm) ;
+		\draw[-] (0,0) -- node[pos=0.5, right=3pt] {$L$} +(30:1.7cm) ;
+		\node at (45:2) {$s$};
+		\node at (45:1) {$\theta$};
+\end{tikzpicture}
+
+\textit{We can describe the relation between $s$, $\theta$ and $L$ as: $s = L\theta$}
+\end{center}
+\textbar{Now, we shall insert our the relation into our equation for tangential acceleration: }
+
+\begin{center}
+$a_t = \frac{d^2s}{dt^2} = -g\sin\theta 
+$
+
+$L\frac{d^2\theta}{dt^2} = -g\sin\theta 
+$
+
+$\frac{d^2\theta}{dt^2} = -\left(\frac{g}{L}\right)\sin\theta 
+$
+\end{center}
+
+\textbar{To complete our derivation, we shall use an approximation that approximates small angles of $\sin\theta \approx \theta$. It is an approximation because, with greater angles of $\theta$, there is a more significant deviation from the function $\sin\theta$. }
 
 
 
+\begin{center}
+\begin{tikzpicture}
+	\begin{axis}[domain=0:1,legend pos=outer north east]
+		\addplot {sin(deg(x))};  
+		\addplot {x};
+		\legend{$\sin(\theta)$,$y=\theta$}
+	\end{axis}
+\end{tikzpicture}
+\end{center}
+\textbar{Now with this knowledge of the restrictions for where our derivation may be reasonable, let us continue: }
 
-
-
-
-
-
-
+\begin{center}
+$ \frac{d^2\theta}{dt^2} = -\left(\frac{g}{L}\right)\theta
+$
+\textit{The relation of position to angular velocity is: $\frac{d^2x}{dt^2} = -\omega^2\left[x(t)\right]$
+\end{center}
 
 
 
