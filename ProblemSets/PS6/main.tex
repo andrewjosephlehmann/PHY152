@@ -23,6 +23,8 @@
 \usepackage{graphicx}
 \usepackage{mathtools}
 \usepackage{tabularx}
+\usepackage{pst-eucl}
+%\usepackage{auto-pst-pdf}
 \usetikzlibrary{decorations.pathmorphing,patterns}
 \newcommand{\vectorproj}[2][]{\textit{proj}_{{#1}}{#2}}
 \newcommand{\vect}{\mathbf}
@@ -532,14 +534,74 @@ $
 \end{center}
 \textit{The vibration frequency is simply an approximation, and with more precise data, would likely yield a different answer for the vibrational frequency of HCl.}
 
-\subsection{Deriving The Motion of a Pendulum}
+\subsection{Deriving The Motion of a Standard Pendulum}
 
+\textbar{A standard pendulum is a device in which a mass hangs freely from a string in a gravitational field. Describing such a device in a concise manner entails many assumptions: 
 
+\hspace{1cm} \bullet \hspace*{0.5cm}The mass attached to the string is assumed to be a point particle. 
 
+\hspace{1cm} \bullet \hspace*{0.5cm}Mass is attached to a non-stretchable string with negligible mass. 
 
+\hspace{1cm} \bullet \hspace*{0.5cm}Frictionless suspension of the pendulum.
 
+Let us make a couple illustrations that outlines much of the forces acting upon the point mass in this system: }
 
+\begin{center}
+\begin{tikzpicture}
+	% save length of g-vector and theta to macros
+	\pgfmathsetmacro{\Gvec}{1.5}
+	\pgfmathsetmacro{\myAngle}{30}
+	% calculate lengths of vector components
+	\pgfmathsetmacro{\Gcos}{\Gvec*cos(\myAngle)}
+	\pgfmathsetmacro{\Gsin}{\Gvec*sin(\myAngle)}
+	
+	\coordinate (centro) at (0,0);
+	%\draw[dashed,gray,-] (centro) -- ++ (0,-3.5) node (mary) [black,below]{$ $};
+	\draw[thick] (centro) -- ++(240+\myAngle:3) coordinate (bob);
+	%\pic [draw, ->, "$\theta$", angle eccentricity=1.5] {angle = mary--centro--bob};
+	\draw [blue,-stealth] (bob) -- ($(bob)!\Gcos cm!(centro)$) node[right]{$T$};
+	%\draw [-stealth] (bob) -- ($(bob)!-\Gcos cm!(centro)$)
+	%coordinate (gcos)
+	%node[midway,above right] {$\vec{F}_g\cos\theta$};
+	%\draw [-stealth] (bob) -- ($(bob)!\Gsin cm!90:(centro)$)
+	%coordinate (gsin)
+	%node[near end, above, pos=1.2] {$\vec{F}_g\sin\theta$};
+	\draw [-stealth] (bob) -- ++(0,-\Gvec)
+	coordinate (g)
+	node[near end,left] {$\vec{F}_g$};
+	%\pic [draw, ->, "$\theta$", angle eccentricity=1.5] {angle = g--bob--gcos};
+	\filldraw [fill=black!40,draw=black] (bob) circle[radius=0.1];
+\end{tikzpicture}
+\hspace*{2.5cm} 
+% 
+\begin{tikzpicture}
+	% save length of g-vector and theta to macros
+	\pgfmathsetmacro{\Gvec}{1.5}
+	\pgfmathsetmacro{\myAngle}{30}
+	% calculate lengths of vector components
+	\pgfmathsetmacro{\Gcos}{\Gvec*cos(\myAngle)}
+	\pgfmathsetmacro{\Gsin}{\Gvec*sin(\myAngle)}
+	
+	\coordinate (centro) at (0,0);
+	\draw[dashed,gray,-] (centro) -- ++ (0,-3.5) node (mary) [black,below]{$ $};
+	\draw[thick] (centro) -- ++(270+\myAngle:3) coordinate (bob);
+	\pic [draw, ->, "$\theta$", angle eccentricity=1.5] {angle = mary--centro--bob};
+	\draw [blue,-stealth] (bob) -- ($(bob)!\Gcos cm!(centro)$) node[right]{$T$};
+	\draw [-stealth] (bob) -- ($(bob)!-\Gcos cm!(centro)$)
+	coordinate (gcos)
+	node[midway,above right] {$\vec{F}_g\cos\theta$};
+	\draw [-stealth] (bob) -- ($(bob)!\Gsin cm!90:(centro)$)
+	coordinate (gsin)
+	node[near end, above, pos=1.2] {$\vec{F}_g\sin\theta$};
+	\draw [-stealth] (bob) -- ++(0,-\Gvec)
+	coordinate (g)
+	node[near end,left] {$\vec{F}_g$};
+	\pic [draw, ->, "$\theta$", angle eccentricity=1.5] {angle = g--bob--gcos};
+	\filldraw [fill=black!40,draw=black] (bob) circle[radius=0.1];
+\end{tikzpicture}
+\end{center}
 
+\textbar{One can observe that once the angle $\theta$ is greater or less than $0$ radians, the force of gravity gets divided into multiple components. One of these components $\vec{F}_g\sin\theta$ is a restoring force, meaning that it is the force which will always point towards the equilibrium. Now with some understanding of the workings of pendulums, let us delve into deriving the mathematics needed to solve these systems. }
 
 
 
